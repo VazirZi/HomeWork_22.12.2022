@@ -125,3 +125,65 @@ for (int i = 1; i <= number; i++)
     Console.WriteLine(result);
 }
 */
+
+
+
+//==============================Задача_7 (последнее задание из семинара)==============================
+
+
+
+/*
+double exceptionHandling(double num)  // Функция проверки корректности ввода данных
+{
+    if (num == 0 || num < 0)
+    {
+        while (num == 0 || num < 0)
+        {
+            Console.Write("Введены некорректные данные (равные или меньше 0)! Введите корректные данные: ");
+            num = Convert.ToDouble(Console.ReadLine());
+        }
+    }
+    return num;
+}
+
+double enter (string name) // Функция обработки ввода данных
+{
+    Console.Write(name);
+    double number = Convert.ToDouble(Console.ReadLine());
+    double number1 = exceptionHandling(number);  // Вызываем функцию для проверки корректности ввода данных
+    return number1;
+}
+
+double n = enter("Введите кеш: ");
+double m = enter("Введите процент кеша: ");
+double k = enter("Введите стоимость квартиры: ");
+double q = enter("Введите процент квартиры: ");
+
+double percent1 = n * (m * 0.01);
+double percent2 = k * (q * 0.01);
+
+int years = 0;
+
+if (percent2 >= n) // Если процент квартиры больше кеша, то выводим соответствующее сообщение
+{
+    Console.WriteLine("Безысходность...");
+    return;
+} 
+else if (n < k)
+{
+    while (n < k)
+    {        
+        n = n + (n * (m * 0.01));        
+        k = k + (k * (q * 0.01));
+
+        years++;
+    }
+}
+else if (n == k)
+{
+    Console.WriteLine("Можем купить квартиру сразу же");
+    return;
+}
+
+Console.WriteLine($"У нас получится купить квартиру через {years} лет");
+*/
